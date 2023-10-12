@@ -1,4 +1,4 @@
-input: .asciz "Enter a non-negative number:\n"
+input: .asciz "Boyan Bonev (bibonev)\nSimeon Nedelkov (snedelkov)\Recursion assignment:\nEnter a non-negative number:\n"
 scan: .asciz "%ld"
 output: .asciz "%ld! = %ld\n"
 
@@ -19,15 +19,15 @@ main:
     mov $0, %rax        
     call scanf          # read number
 
-    pop %rcx
-    pop %rcx            # get number value
+    pop %r8
+    pop %r8            # get number value
 
-    mov %rcx, %rdi      # set subroutine arguments
+    mov %r8, %rdi      # set subroutine arguments
     call factorial      # call factorial subroutine
 
     mov $output, %rdi
-    mov %rcx, %rsi      
-    mov %rax, %rdx      
+    mov %r8, %rsi      
+    mov %rax, %rdx
     mov $0, %rax
     call printf         # print result
 
@@ -43,23 +43,23 @@ factorial:
     push %rbp
     mov %rsp, %rbp
 
-    cmp $0, %rdi
+    cmp $0, %rdi        # check if value is positive
     jle nonPositive
     jmp positive
 
     nonPositive:
-        mov $1, %rax
+        mov $1, %rax    # return 0 if argument is non-positive
         jmp end
 
     positive:
-        mov %rdi, %rax
-        sub $1, %rdi
-        
-        call factorial
+        push %rdi
+        push %rdi       # push rdi twice into stack
+        sub $1, %rdi    # subtract 1 from rdi
+        call factorial  # call function
 
-        add $1, %rdi
-        mul %rdi
-        jmp end
+        pop %rdi        
+        pop %rdi        
+        mul %rdi        # pop rdi twice and multiply rax by rdi
 
     end:
         # Epilogue
