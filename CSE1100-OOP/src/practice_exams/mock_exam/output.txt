@@ -1,0 +1,14 @@
+You have 16 gold and own 6 cards.
+
+Unit: Mage Apprentice (NORMAL), costs (2) Energy.
+3 Attack - 1 Defence
+Spell: Warhammer (RARE), costs (3) Energy.
+2 Durability
+Spell: Rusty Sword (NORMAL), costs (2) Energy.
+1 Durability
+Spell: Frost Ray (RARE), costs (3) Energy.
+Frost - Freeze all enemy units, rendering them unable to attack for 1 turn.
+Unit: Enraged Squirrel (NORMAL), costs (1) Energy.
+2 Attack - 1 Defence
+Unit: Knight of the Legion (NORMAL), costs (4) Energy.
+4 Attack - 5 Defence
